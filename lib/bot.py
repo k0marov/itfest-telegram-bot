@@ -35,7 +35,7 @@ class Bot:
         for topic in topics.TOPICS_LIST:
             new_posts = self.vk.get_posts_for_last_n_minutes(
                 topic,
-                (config.TIME_TO_SLEEP_AFTER_REQUEST*len(topics.TOPICS_LIST)
+                (config.TIME_TO_SLEEP_AFTER_REQUEST/60*len(topics.TOPICS_LIST)
                     +
                 config.POST_UPDATING_INTERVAL)
             )
